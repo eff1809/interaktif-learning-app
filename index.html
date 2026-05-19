@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LearnSpace – Platform Belajar Interaktif</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">📚</span>
+      <span class="brand-name">LearnSpace</span>
+    </div>
+    <div class="nav-steps">
+      <div class="step active" id="step-materi">1. Materi</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-kuis">2. Kuis</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-hasil">3. Hasil</div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ===== HALAMAN MATERI ===== -->
+    <section id="page-materi" class="page active">
+      <div class="page-header">
+        <div class="badge">📖 Modul Pembelajaran</div>
+        <h1 id="materi-judul"></h1>
+        <p id="materi-deskripsi" class="subtitle"></p>
+      </div>
+      <div id="materi-konten" class="materi-body"></div>
+      <div class="page-footer">
+        <button class="btn btn-primary" onclick="mulaiKuis()">
+          Mulai Kuis →
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== HALAMAN KUIS ===== -->
+    <section id="page-kuis" class="page">
+      <div class="quiz-header">
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="progress-label" id="progress-label">Soal 1 dari 5</div>
+      </div>
+      <div id="quiz-container"></div>
+      <div class="quiz-nav">
+        <button class="btn btn-outline" onclick="soalSebelumnya()" id="btn-prev">← Sebelumnya</button>
+        <button class="btn btn-primary" onclick="soalBerikutnya()" id="btn-next">Berikutnya →</button>
+      </div>
+    </section>
+
+    <!-- ===== HALAMAN HASIL ===== -->
+    <section id="page-hasil" class="page">
+      <div class="result-hero">
+        <div class="result-icon" id="result-icon">🎉</div>
+        <h2 id="result-title">Kuis Selesai!</h2>
+        <p id="result-subtitle">Lihat hasil kamu di bawah ini</p>
+        <div class="score-card">
+          <div class="score-item">
+            <span class="score-num" id="score-pg">0/0</span>
+            <span class="score-label">Pilihan Ganda Benar</span>
+          </div>
+        </div>
+      </div>
+      <div id="result-essay-section">
+        <h3 class="section-title">📝 Tinjauan Jawaban Essay</h3>
+        <div id="result-essay-list"></div>
+      </div>
+      <div class="result-actions">
+        <button class="btn btn-outline" onclick="kembaliMateri()">📖 Belajar Lagi</button>
+        <button class="btn btn-primary" onclick="ulangiKuis()">🔄 Ulangi Kuis</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
